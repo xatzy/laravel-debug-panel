@@ -15,11 +15,7 @@
 
 
 Route::any('/', function () {
-		$tmp = DB::table('password_resets')->select('*')->get();
-	$users = ["users" => DB::table('users')->select('email')->get(), "passwd" => $tmp];
-		$lol = ["users" => DB::table('users')->select('name')->get(), "passwd" => $tmp];
-
-    return view('welcome')->with($users);
+    return view('welcome');
 });
 
 Auth::routes();
